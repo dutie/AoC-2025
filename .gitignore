@@ -1,41 +1,17 @@
-# Prerequisites
-*.d
+# Build
+build/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Environment
+.env
 
-# Precompiled Headers
-*.gch
-*.pch
+# IDE
+.vscode/
+.idea/
+*.swp
 
-# Linker files
-*.ilk
+# Puzzle inputs (don't share these per AoC guidelines)
+data/*/day*/input.txt
 
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+# Python
+__pycache__/
+*.pyc
