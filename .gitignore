@@ -10,7 +10,7 @@ build/
 *.swp
 
 # Puzzle inputs (don't share these per AoC guidelines)
-data/*/day*/input.txt
+data/
 
 # Python
 __pycache__/

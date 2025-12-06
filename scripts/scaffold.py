@@ -4,6 +4,8 @@
 import argparse
 import os
 from pathlib import Path
+import time
+from datetime import datetime
 
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
@@ -107,14 +109,19 @@ def main():
     parser.add_argument("year", type=int, help="Year (e.g., 2024)")
     parser.add_argument("day", type=int, help="Day (1-25)")
     parser.add_argument("--no-fetch", action="store_true", help="Don't fetch input")
+
+    datenow = datetime.now()
+    yearnow = datenow.year
+    daynow = datenow.day
+    
     
     args = parser.parse_args()
     
-    if not (2015 <= args.year <= 2030):
+    if not (2015 <= args.year <= yearnow):
         print(f"Invalid year: {args.year}")
         return 1
     
-    if not (1 <= args.day <= 25):
+    if not (1 <= args.day <= daynow):
         print(f"Invalid day: {args.day}")
         return 1
     

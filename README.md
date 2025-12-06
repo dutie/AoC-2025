@@ -16,10 +16,14 @@ cp .env.example .env
 make build
 
 # 4. Scaffold a new day
-make scaffold YEAR=2024 DAY=2
+make scaffold YEAR=2025 DAY=2
+# OR
+make scaffold 2025 04
 
 # 5. Solve and run
-make run YEAR=2024 DAY=2
+make run YEAR=2025 DAY=4
+# OR
+make run 2025 04
 ```
 
 ## Commands
@@ -27,12 +31,12 @@ make run YEAR=2024 DAY=2
 | Command | Description |
 |---------|-------------|
 | `make build` | Build the project |
-| `make scaffold YEAR=2024 DAY=1` | Create new day with boilerplate |
-| `make fetch YEAR=2024 DAY=1` | Download puzzle input |
-| `make run YEAR=2024 DAY=1` | Run a solution |
-| `make example YEAR=2024 DAY=1` | Run with example.txt input |
+| `make scaffold YEAR=2025 DAY=1` | Create new day with boilerplate |
+| `make fetch YEAR=2025 DAY=1` | Download puzzle input |
+| `make run YEAR=2025 DAY=1` | Run a solution |
+| `make example YEAR=2025 DAY=1` | Run with example.txt input |
 | `make bench` | Benchmark all solutions |
-| `make bench YEAR=2024 DAY=1` | Benchmark specific day |
+| `make bench YEAR=2025 DAY=1` | Benchmark specific day |
 | `make list` | List all available solutions |
 | `make clean` | Remove build files |
 
@@ -46,12 +50,12 @@ aoc-cpp/
 │   │   ├── solution.hpp   # Base Solution class
 │   │   ├── registry.hpp   # Auto-registration system
 │   │   └── utils.hpp      # Helper functions
-│   └── 2024/
+│   └── 2025/
 │       └── day01/
 │           ├── solution.hpp
 │           └── solution.cpp
 ├── data/
-│   └── 2024/
+│   └── 2025/
 │       └── day01/
 │           ├── input.txt    # Puzzle input (fetched)
 │           └── example.txt  # Example input (manual)
@@ -70,7 +74,7 @@ Each solution inherits from `aoc::Solution`:
 #include "common/registry.hpp"
 #include "common/utils.hpp"
 
-namespace aoc::y2024 {
+namespace aoc::y2025 {
 
 class Day01 : public Solution {
 public:
@@ -84,13 +88,13 @@ public:
         return "TODO";
     }
 
-    int year() const override { return 2024; }
+    int year() const override { return 2025; }
     int day() const override { return 1; }
 };
 
 REGISTER_SOLUTION(Day01)  // Auto-registers with the runner
 
-} // namespace aoc::y2024
+} // namespace aoc::y2025
 ```
 
 ## Utilities
@@ -103,11 +107,13 @@ The `utils.hpp` header provides common helpers:
 - `read_file(path)` - Read file contents
 - `input_path(year, day)` - Get path to input file
 
+**Note:** functions might not yet be fully implemented, I have not had that much time unfortunately 😅
+
 ## Getting Your Session Cookie
 
 1. Log in to [adventofcode.com](https://adventofcode.com)
 2. Open browser DevTools (F12)
-3. Go to Application → Cookies → adventofcode.com
+3. Go to Application - Cookies - adventofcode.com
 4. Copy the `session` cookie value
 5. Add to `.env`: `AOC_SESSION=your_cookie_here`
 
