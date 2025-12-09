@@ -2,6 +2,10 @@
 
 A minimal scaffolding tool for solving Advent of Code puzzles in C++17.
 
+<!--- advent_readme_stars table --->
+
+<!--- advent_readme_stars table --->
+
 ## Quick Start
 
 ```bash
@@ -113,9 +117,35 @@ The `utils.hpp` header provides common helpers:
 
 1. Log in to [adventofcode.com](https://adventofcode.com)
 2. Open browser DevTools (F12)
-3. Go to Application - Cookies - adventofcode.com
+3. Go to Application → Cookies → adventofcode.com
 4. Copy the `session` cookie value
 5. Add to `.env`: `AOC_SESSION=your_cookie_here`
+
+## GitHub Actions Setup (Auto-update Stars)
+
+This template includes a GitHub Action that automatically updates the README with your ⭐ progress.
+
+### Setup Steps
+
+1. **Create a private leaderboard** on [adventofcode.com](https://adventofcode.com):
+   - Go to `https://adventofcode.com/{year}/leaderboard/private`
+   - Click "Create It" if you don't have one
+
+2. **Add Repository Secrets** (Settings → Secrets and variables → Actions → Secrets):
+   | Secret | Description |
+   |--------|-------------|
+   | `AOC_USER_ID` | Your numeric ID from [settings page](https://adventofcode.com/settings) (number after `#`) |
+   | `AOC_SESSION` | Your session cookie from browser DevTools |
+   | `AOC_YEAR` | The year to track (e.g., `2025`) |
+
+3. **Add Repository Variable** (Settings → Secrets and variables → Actions → Variables):
+   | Variable | Value |
+   |----------|-------|
+   | `AOC_ENABLED` | `true` |
+
+4. **Run the workflow**:
+   - Go to Actions → "Update README ⭐" → "Run workflow"
+   - Or just push changes to `src/` and it will run automatically
 
 ## Requirements
 
